@@ -10,6 +10,7 @@ var imagemin = require('gulp-imagemin');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
+var mixins = require('postcss-mixins');
 
 
 
@@ -26,24 +27,37 @@ gulp.task('watch', function () {
 
 
     watch('./app/index.html', function () {
-        console.log('HTML change detected')
+        //        console.log('HTML change detected')
         browserSync.reload();
     });
 
 
     watch('./app/styles/modules/*.css', function () {
-        gulp.start('styles');
+        gulp.start('cssInject');
     });
 
 
     watch('./app/js/scripts/*js', function () {
         gulp.start('scripts');
+        browserSync.reload();
     });
 });
 
 
-//copy html to dist
 
+
+//browsersync styles, styles is dependency so it will run and complete first
+
+gulp.task('cssInject', ['styles'], function () {
+    return gulp.src('./app/styles/temp/source.css')
+        .pipe(browserSync.stream());
+});
+
+
+
+
+
+//copy html to dist
 gulp.task('copyhtml', function () {
     return gulp.src('./app/index.html')
         .pipe(gulp.dest('./dist/'));
@@ -55,6 +69,7 @@ gulp.task('copyhtml', function () {
 gulp.task('styles', function () {
     var postcss_stuff = [
        cssImport,
+       mixins,
        nested,
        autoprefixer,
        cssnano,
@@ -65,7 +80,7 @@ gulp.task('styles', function () {
     return gulp.src('./app/styles/source.css')
         .pipe(postcss(postcss_stuff))
         .pipe(gulp.dest('./app/styles/temp/'))
-        .pipe(browserSync.stream()); //live reload of compiled css
+    //        .pipe(browserSync.stream()); //live reload of compiled css
 
 });
 
