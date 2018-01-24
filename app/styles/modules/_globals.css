@@ -1,5 +1,22 @@
-body{
-    background: red;
-    font-size: 80px;
-    
+html,
+body {
+    background: white;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+
+
+    h2 {
+        font-weight: 400;
+    }
+
+
+}
+
+
+
+* {
+    box-sizing: border-box;
 }
