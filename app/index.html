@@ -1,46 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/temp/source.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="styles/temp/source.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-
     <title>WikiViewer</title>
 </head>
 
 <body>
     <div class="wrapper">
-
-
-
-
         <div class="leftSide">
-
             <form>
-                <input type="search" id="mySearch" placeholder="Search Wikipedia" name="q">
+                <input id="mySearch" name="q" placeholder="Search Wikipedia" type="search">
+            </form><a class="leftSide-random" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Randomize</a>
+            <ul id="myUL">
 
-            </form>
-
-            <a class="leftSide-random" href="#">Randomize</a>
-
+            </ul>
         </div>
-        <div class="rightSide">
-            <img src="images/dino.png">
-        </div>
+        <div class="rightSide"><img src="images/dino.png"></div>
     </div>
-
     <div class="centered--content">
         <h2>WIKI VIEWER</h2>
         <p>SEARCH FOR ANY PAGE</p>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src='js/main.js' type="text/javascript"></script>
 
+    </script>
+    <script src='js/main.js' type="text/javascript">
+
+
+    </script>
 </body>
 
 </html>
