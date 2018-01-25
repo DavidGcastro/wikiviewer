@@ -10,7 +10,7 @@ $(search).on("keyup", function (e) {
     searchFor = search.value;
     var keycode = e.keyCode;
     searchFor = search.value;
-//    $(list).empty();
+    //    $(list).empty();
     searchMe(searchFor);
 
 
