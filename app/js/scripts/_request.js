@@ -5,7 +5,6 @@ var list = document.getElementById("myUL");
 var preview = document.getElementsByClassName("searchPreview");
 
 
-//$(list).empty();
 $(search).on("keyup", function (e) {
     searchFor = search.value;
     var keycode = e.keyCode;
@@ -17,7 +16,7 @@ $(search).on("keyup", function (e) {
 
 });
 
-//if someone copy pastes
+//if someone copy pastes detect
 
 $(search).on("keydown", function (e) {
     var key = e.which;
