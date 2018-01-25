@@ -9,13 +9,14 @@ $(search).on("keyup", function (e) {
     searchFor = search.value;
     var keycode = e.keyCode;
     searchFor = search.value;
-    if (searchFor.length >= 0) {
-        list.innerHTML = "";
-        searchMe(searchFor);
-    } else {
-        list.innerHTML = "";
-    }
+    $(list).empty();
+    searchMe(searchFor);
+
+
+
 });
+
+//if someone copy pastes
 
 $(search).on("keydown", function (e) {
     var key = e.which;
@@ -36,6 +37,7 @@ function searchMe(item) {
     var apiRequest = new XMLHttpRequest();
     apiRequest.open('GET', 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&search=' + item + '&namespace=0&limit=5')
     apiRequest.send();
+
     apiRequest.onload = function () {
         var data = JSON.parse(apiRequest.responseText);
         var searchList = data[1];
