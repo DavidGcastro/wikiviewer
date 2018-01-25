@@ -130,35 +130,49 @@
 
 
 #myUL {
+
     transition: all .300s ease-in;
     padding: 0;
     margin-top: 5px;
     list-style: none;
     height: 0;
-
     color: black;
-    li {
-        padding: 5px 0;
-        transition: all .300s ease-in;
-        width: 50%;
-        margin: 0 auto;
+
+    .searchName {
+        margin-right: 20px;
     }
-    li:hover {
 
-        background: black;
+    li {
+        margin: 5px 0;
+        position: relative;
+        transition: all .300s ease-in;
 
-        a {
-
-            color: white;
+        @mixin atMedium {
+            padding: 0;
         }
+
 
     }
 
     a {
 
+        display: block;
         font-weight: 300;
         color: black;
         background: none;
         border: none;
+
+        @mixin atLarge {
+            display: inline;
+        }
+
+
+        &:hover {
+            color: #575757;
+        }
+
+        span {
+            margin-left: 5px;
+        }
     }
 }

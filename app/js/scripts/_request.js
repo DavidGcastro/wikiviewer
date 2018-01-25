@@ -10,7 +10,13 @@ $(search).on("keyup", function (e) {
     var keycode = e.keyCode;
     searchFor = search.value;
     //    $(list).empty();
-    searchMe(searchFor);
+    if (searchFor.length > 0) {
+        searchMe(searchFor);
+    } else {
+        $(list).empty();
+    }
+
+
 
 
 
@@ -45,7 +51,10 @@ function searchMe(item) {
         $(list).empty();
 
         for (var i = 0; i < searchList.length; i++) {
-            list.innerHTML += "<li class='searchPreview'><a target='_blank' href=" + url[i] + ">" + searchList[i] + "</a></li>"
+            var anchorName = url[i];
+            anchorName = anchorName.split("").splice((anchorName.indexOf(".") + 1)).join("");
+            console.log(anchorName);
+            list.innerHTML += "<li class='searchPreview'><span class = 'searchName'>" + searchList[i] + "</span><a target='_blank' href=" + url[i] + ">" + anchorName + "<span><i class='fa fa-external-link' aria-hidden='true'></i></span></a></li>";
 
         }
     }
