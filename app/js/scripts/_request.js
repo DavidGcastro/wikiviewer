@@ -5,11 +5,12 @@ var list = document.getElementById("myUL");
 var preview = document.getElementsByClassName("searchPreview");
 
 
+//$(list).empty();
 $(search).on("keyup", function (e) {
     searchFor = search.value;
     var keycode = e.keyCode;
     searchFor = search.value;
-    $(list).empty();
+//    $(list).empty();
     searchMe(searchFor);
 
 
@@ -42,6 +43,8 @@ function searchMe(item) {
         var data = JSON.parse(apiRequest.responseText);
         var searchList = data[1];
         var url = (data[3]);
+        $(list).empty();
+
         for (var i = 0; i < searchList.length; i++) {
             list.innerHTML += "<li class='searchPreview'><a target='_blank' href=" + url[i] + ">" + searchList[i] + "</a></li>"
 
