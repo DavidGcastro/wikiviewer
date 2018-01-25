@@ -44,14 +44,13 @@
 
 .leftSide {
 
-    a {
+    &--random {
         transition: all 200ms ease-in;
         font-size: 1rem;
         @mixin atMedium {
-            font-size: 1.45vh;
+            font-size: 1.75vh;
         }
 
-        text-decoration: none;
         color: white;
         background: #393939;
         padding: 10px;
@@ -88,7 +87,7 @@
         font-size: 1rem;
 
         @mixin atMedium {
-            font-size: 1.2vh;
+            font-size: 1.5vh;
 
         }
         -webkit-appearance: none;
@@ -136,34 +135,27 @@
     margin-top: 5px;
     list-style: none;
     height: 0;
-    background: #f8f8f8!important;
-    /*
-     display: flex;
-    flex-direction: column;
-*/
-    /*    text-align: center;
-    */
+
     color: black;
     li {
 
-        border-radius: 5%;
         transition: all .300s ease-in;
         width: 50%;
         margin: 0 auto;
-        border: 1px solid black;
     }
     li:hover {
 
         background: black;
 
         a {
+
             color: white;
         }
 
     }
 
     a {
-
+        font-weight: 300;
         color: black;
         background: none;
         border: none;
