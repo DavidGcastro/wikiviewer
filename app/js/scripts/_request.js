@@ -37,8 +37,12 @@ $(search).on("keyup", function (e) {
 $(search).on("keydown", function (e) {
     var key = e.which;
     if (key === 13 && searchFor.length > 0) {
-        e.preventDefault();
-        click();
+        if (searchFor.length > 0) {
+            click();
+        } else {
+            alert("type something")
+        }
+
     }
 });
 
@@ -63,13 +67,15 @@ function searchMe(item) {
         // sent request
         var data = JSON.parse(apiRequest.responseText);
         // description of first in the array
-        var description = (data[2][0]);
+
+
         //list that displays underneath search
         var searchList = data[1];
         // url that displays next to each one
         var url = (data[3]);
 
         //if the first element description can refer to several other things
+        var description = data[2][0];
 
         if (description.indexOf("may refer to") !== -1 || description.indexOf("most commonly refers to") !== -1) {
             // make a list of such descriptions
@@ -81,14 +87,17 @@ function searchMe(item) {
                 var descriptionMin = descriptionList[j].split(" ").splice(0, 10).join(" ");
 
                 // display them and italicize
-                previewViewerList.innerHTML += "<li><em>" + (descriptionMin) + "...</em></li>";
+                previewViewerList.innerHTML += "<li><em>" + descriptionMin + "...</em></li>";
             }
         }
 
+
+
         // if the first element comes back with an empty description
-        if (description.length == 0) {
+        if (description.length === 0) {
             // show the second one
-            previewViewer.innerHTML = "<p>" + data[2][1] + "</p>";
+            //data[2][1]
+            previewViewer.innerHTML = "<p>Description not available. Press enter to learn more.</p>";
 
 
         } else {
