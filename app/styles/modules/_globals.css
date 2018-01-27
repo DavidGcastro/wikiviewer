@@ -23,3 +23,12 @@ body {
     text-decoration: none;
 
 }
+
+.hidden {
+
+    display: none;
+
+    @mixin atSmall {
+        display: block;
+    }
+}

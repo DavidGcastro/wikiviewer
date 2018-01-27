@@ -11,10 +11,7 @@
         flex-direction: row;
     }
 
-
-
 }
-
 
 .centered--content {
     position: relative;
@@ -23,6 +20,8 @@
     left: 0;
     right: 0;
     text-align: center;
+    transition: all .3s ease-out;
+
 
     h2 {
         font-weight: 400;
@@ -106,7 +105,6 @@
     padding: 0;
     background-color: white;
     flex: 1;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,6 +123,22 @@
         }
 
 
+    }
+
+    #previewViewer {
+
+        text-align: center;
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    #previewViewerList {
+        margin: 0 auto;
+
+
+
+
+        li {}
     }
 }
 
