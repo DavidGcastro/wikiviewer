@@ -97,7 +97,7 @@ function searchMe(item) {
         if (description.length === 0) {
             // show the second one
             //data[2][1]
-            previewViewer.innerHTML = "<p>Description not available. Press enter to learn more.</p>";
+            previewViewer.innerHTML = "<p>Description not available. Press enter to be redirected to the correct page.</p>";
 
 
         } else {
